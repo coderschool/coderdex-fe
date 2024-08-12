@@ -6,11 +6,12 @@ import Typography from "@mui/material/Typography";
 import { useState } from "react";
 import { Box, Button, Container, Grid, Stack } from "@mui/material";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { PokeType } from "./PokeType";
 import { useDispatch, useSelector } from "react-redux";
-import { changePage, typeQuery } from "../features/pokemons/pokemonSlice";
 import { Link } from "react-router-dom";
+import { PokeType } from "./PokeType";
+
 import { pokemonTypes } from "../pokemonTypes";
+import { changePage, typeQuery } from "../features/pokemons/pokemonSlice";
 
 const styles = {
   container: {
@@ -24,7 +25,7 @@ const styles = {
   },
   pokeBox: {
     backgroundColor: "white",
-    backgroundImage: "url('/images/container_bg.png')",
+    backgroundImage: "url('http://localhost:5000/images/container_bg.png')",
     paddingBottom: "1rem",
   },
   textSearch: {
@@ -237,7 +238,7 @@ export default function PokeList() {
                     >
                       <CardMedia
                         component="img"
-                        image={`${pokemon.url}`}
+                        image={`http://localhost:5000${pokemon?.url}`}
                         alt="Missing image"
                         sx={{
                           margin: "auto",
